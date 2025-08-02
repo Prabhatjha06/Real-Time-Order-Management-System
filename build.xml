@@ -11,8 +11,13 @@
         <javac srcdir="${src.dir}" destdir="${classes.dir}" includeantruntime="false"/>
     </target>
 
+    <target name="jar" depends="compile">
+        <mkdir dir="${build.dir}/jar"/>
+        <jar destfile="${build.dir}/jar/OrderManagement.jar" basedir="${classes.dir}"/>
+    </target>
+
     <target name="clean">
         <delete dir="${build.dir}"/>
     </target>
 </project>
-ant clean compile
+
